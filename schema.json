@@ -1,0 +1,231 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CD-Text file",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "codepage": {
+                    "type": "string",
+                    "enum": [ "iso-8859-1", "ms-jis" ]
+                },
+                "copyrighted": { 
+                    "type":"boolean" 
+                },
+                "language": {
+                    "type": "string",
+                    "enum": [
+                        "unknown",
+                        "albanian",
+                        "breton",
+                        "catalan",
+                        "croatian",
+                        "welsh",
+                        "czech",
+                        "danish",
+                        "german",
+                        "english",
+                        "spanish",
+                        "esperanto",
+                        "estonian",
+                        "basque",
+                        "faroese",
+                        "french",
+                        "irish",
+                        "frisian",
+                        "gaelic",
+                        "galician",
+                        "iceland",
+                        "italian",
+                        "lappish",
+                        "latin",
+                        "latvian",
+                        "luxembourgian",
+                        "lithuanian",
+                        "hungarian",
+                        "maltese",
+                        "dutch",
+                        "norwegian",
+                        "occitan",
+                        "polish",
+                        "portugese",
+                        "romanian",
+                        "romanish",
+                        "serbian",
+                        "slovak",
+                        "slovenian",
+                        "finnish",
+                        "swedish",
+                        "turkish",
+                        "flemish",
+                        "wallon",
+                        "zulu",
+                        "vietnamese",
+                        "uzbek",
+                        "urdu",
+                        "ukrainian",
+                        "thai",
+                        "telugu",
+                        "tatar",
+                        "tamil",
+                        "tadzhik",
+                        "swahili",
+                        "sranan_tongo",
+                        "somali",
+                        "sinhalese",
+                        "shona",
+                        "serbo-croat",
+                        "ruthenian",
+                        "russian",
+                        "quechua",
+                        "pushtu",
+                        "punjabi",
+                        "persian",
+                        "papamiento",
+                        "oriya",
+                        "nepali",
+                        "ndebele",
+                        "marathi",
+                        "moldavian",
+                        "malaysian",
+                        "malagasay",
+                        "macedonian",
+                        "laotian",
+                        "korean",
+                        "khmer",
+                        "kazakh",
+                        "kannada",
+                        "japanese",
+                        "indonesian",
+                        "hindi",
+                        "hebrew",
+                        "hausa",
+                        "gurani",
+                        "gujurati",
+                        "greek",
+                        "georgian",
+                        "fulani",
+                        "dari",
+                        "churash",
+                        "chinese",
+                        "burmese",
+                        "bulgarian",
+                        "bengali",
+                        "bielorussian",
+                        "bambora",
+                        "azerbaijani",
+                        "assamese",
+                        "armenian",
+                        "arabic",
+                        "amharic"
+                    ]
+                }
+            },
+            "required": [ "codepage", "copyrighted", "language" ]
+        },
+        "album": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "performer": {
+                    "type": "string"
+                },
+                "songwriter": {
+                    "type": "string"
+                },
+                "composer": {
+                    "type": "string"
+                },
+                "arranger": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "upc": {
+                    "type": "string",
+                    "minLength": 13,
+                    "maxLength": 13
+                },
+                "catalog": {
+                    "type": "string"
+                },
+                "genre": {
+                    "type": "string",
+                    "enum": [
+                        "not_used",
+                        "not_defined",
+                        "adult_contemporary",
+                        "alternative_rock",
+                        "childrens_music",
+                        "classical",
+                        "contemporary_christian",
+                        "country",
+                        "dance",
+                        "easy_listening",
+                        "erotic",
+                        "folk",
+                        "gospel",
+                        "hip_hop",
+                        "jazz",
+                        "latin",
+                        "musical",
+                        "new_age",
+                        "opera",
+                        "operetta",
+                        "pop",
+                        "rap",
+                        "reggae",
+                        "rock",
+                        "rhythm_and_blues",
+                        "sound_effects",
+                        "spoken_word",
+                        "world_music"
+                    ]
+                },
+                "genre_sup": {
+                    "type": "string"
+                }
+            }
+        },
+        "tracks": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "type": "number"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "performer": {
+                        "type": "string"
+                    },
+                    "songwriter": {
+                        "type": "string"
+                    },
+                    "composer": {
+                        "type": "string"
+                    },
+                    "arranger": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "isrc": {
+                        "type": "string",
+                        "minLength": 12,
+                        "maxLength": 12
+                    }
+                }
+            }
+        },
+        "$schema": {}
+    },
+    "required": [ "meta", "album", "tracks" ],
+    "additionalProperties": false
+}
