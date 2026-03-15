@@ -289,7 +289,7 @@ def write_genre_identification_packs(output: list[bytes], config: ConverterConfi
     if not (has_genre or has_genre_supplementary):
         return
     
-    genre_code = ENUM_GENRES.index(input_data['album']['genre_sup']) if has_genre else 0
+    genre_code = ENUM_GENRES.index(input_data['album']['genre']) if has_genre else 0
     genre_text = input_data['album']['genre_sup'] if has_genre_supplementary else ''
     genre_combined = genre_code.to_bytes(2, 'big') + genre_text.encode('ascii')
 
@@ -424,7 +424,7 @@ if __name__ == '__main__':
     write_block_size_info_packs(output_data, config, input_data)
 
     if config.seq > 256:
-        raise(CdtException('CD-Text data to big (max sequence number exceeded 255)'))
+        raise(CdtException('CD-Text data too big (max sequence number exceeded 255)'))
 
     with open(args.output, 'wb') as output_file:
         for pack in output_data:
